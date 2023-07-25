@@ -105,11 +105,11 @@
           </ul>
 
           <ul id="nissan" class="product">
-            <li v-for="(longSleeves, idx) in longSleeve" :key="idx">
+            <li v-for="(longSleeve, idx) in longSleeves" :key="idx">
               <a href="good_content.html">
-                <img :src="longSleeves.img" alt="1" />
-                <p style="color: #c18666">$ {{longSleeves.shopMoney}}</p>
-                <p>{{longSleeves.shopName}}</p>
+                <img :src="longSleeve.img" alt="1" />
+                <p style="color: #c18666">$ {{longSleeve.shopMoney}}</p>
+                <p>{{longSleeve.shopName}}</p>
               </a>
             </li>
           </ul>
@@ -231,14 +231,14 @@
       </li>
       <ul class="footermenu">
         <li>
-          <a href="goods.html"><h5 style="color: #c18666">商城</h5></a>
-          <a href="goods.html">TOYOTA</a>
-          <a href="goods.html">NISSAN</a>
-          <a href="goods.html">MAZDA</a>
-          <a href="goods.html">FORD</a>
-          <a href="goods.html">MITSUBISHI</a>
-          <a href="goods.html">PORSCHE</a>
-          <a href="goods.html">更多車種</a>
+          <a href="goods.html">
+            <h5 style="color: #c18666">商城</h5>
+          </a>
+          <a href="goods.html">短袖</a>
+          <a href="goods.html">長袖</a>
+          <a href="goods.html">褲子</a>
+          <a href="goods.html">裙子</a>
+          <a href="goods.html">更多款式</a>
         </li>
         <li>
           <a href="#"><h5 style="color: #c18666">關於我們</h5></a>
@@ -281,24 +281,24 @@
     <!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
-    <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
-    <script src="https://unpkg.com/moment"></script>
+    <!-- <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script> -->
+    <!-- <script src="https://unpkg.com/moment"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vuefire/1.3.1/vuefire.js"></script>
 
     <script>
       const firebaseConfig = {
-        apiKey: "AIzaSyBszkT-QMgYBy0LvtyKmNzGfoLORojg-jg",
-        authDomain: "shopping-43fa0.firebaseapp.com",
-        projectId: "shopping-43fa0",
-        storageBucket: "shopping-43fa0.appspot.com",
-        messagingSenderId: "992717455588",
-        appId: "1:992717455588:web:2bc88b2fe3b49a6fd4ecf1",
-        measurementId: "G-DGXMDJ6GE7",
+        apiKey: "AIzaSyAkzPPgLllbxDxNlCjIy0951n0Tsx5RVoA",
+        authDomain: "mspopo.firebaseapp.com",
+        databaseURL: "https://mspopo-default-rtdb.firebaseio.com",
+        projectId: "mspopo",
+        storageBucket: "mspopo.appspot.com",
+        messagingSenderId: "1049963695733",
+        appId: "1:1049963695733:web:2ee74c3bf383e2205eb23c",
       };
 
       const app = firebase.initializeApp(firebaseConfig);
-      console.log(app);
       let db = app.database();
+      console.log(db.ref("all"));
 
       // var storage = firebase.storage();
       // console.log(storage);
@@ -322,7 +322,7 @@
         firebase: {
           notes: db.ref("notes"),
           shortSleeve: db.ref("shortSleeve"),
-          longSleeve: db.ref("longSleeve"),
+          longSleeves: db.ref("longSleeves"),
           skirt: db.ref("skirt"),
           trousers: db.ref("trousers"),
           all: db.ref("all"),

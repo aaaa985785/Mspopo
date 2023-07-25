@@ -81,9 +81,10 @@
               </div>
             </div>
             <div class="content_title" id="app">
+              <!-- <h1 v-for="shortSleeves in shortSleeve">{{shortSleeves}}</h1> -->
               <div>
                 <!-- <input type="text" :value=shortSleeve[0].img> -->
-                <h4>{{oppppo.shortSleeve['-NJhgO-0Dx_WhuD55FlZ'].shopName}}</h4>
+                <h4>{{oppppo.shortSleeve[0].shopName}}</h4>
                 <span>商品編號: {{shortSleeve[0]['.key']}}</span>
                 <p>率性拼接，體現整體質感!</p>
                 <hr width="70%" align="left" />
@@ -325,9 +326,7 @@
         </li>
       </ul>
     </ul>
-
-    <div id="test"></div>
-
+    <div id="test">{{oppppo}}</div>
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="js/all.js"></script>
@@ -360,13 +359,13 @@
 
     <script>
       const firebaseConfig = {
-        apiKey: "AIzaSyBszkT-QMgYBy0LvtyKmNzGfoLORojg-jg",
-        authDomain: "shopping-43fa0.firebaseapp.com",
-        projectId: "shopping-43fa0",
-        storageBucket: "shopping-43fa0.appspot.com",
-        messagingSenderId: "992717455588",
-        appId: "1:992717455588:web:2bc88b2fe3b49a6fd4ecf1",
-        measurementId: "G-DGXMDJ6GE7",
+        apiKey: "AIzaSyAkzPPgLllbxDxNlCjIy0951n0Tsx5RVoA",
+        authDomain: "mspopo.firebaseapp.com",
+        databaseURL: "https://mspopo-default-rtdb.firebaseio.com",
+        projectId: "mspopo",
+        storageBucket: "mspopo.appspot.com",
+        messagingSenderId: "1049963695733",
+        appId: "1:1049963695733:web:2ee74c3bf383e2205eb23c",
       };
 
       const app = firebase.initializeApp(firebaseConfig);
@@ -438,23 +437,19 @@
         },
         methods: {
           shopcar() {
-            // var opoop = this.oppppo.shortSleeve['-NJhgO-0Dx_WhuD55FlZ'].shopMoney
-            // var number = this.values2
-            // console.log(number)
+            var opoop = this.oppppo.shortSleeve[0].shopMoney;
+            var number = this.values2;
+            console.log(number);
             // var totle = this.oppppo.shortSleeve['-NJhgO-0Dx_WhuD55FlZ'].shopMoney * this.values2
             // console.log(totle);
             const note = {
-              img: this.oppppo.shortSleeve["-NJhgO-0Dx_WhuD55FlZ"].img,
-              shopname:
-                this.oppppo.shortSleeve["-NJhgO-0Dx_WhuD55FlZ"].shopName,
-              shopmoney:
-                this.oppppo.shortSleeve["-NJhgO-0Dx_WhuD55FlZ"].shopMoney,
+              img: this.oppppo.shortSleeve[0].img,
+              shopname: this.oppppo.shortSleeve[0].shopName,
+              shopmoney: this.oppppo.shortSleeve[0].shopMoney,
               color: this.values,
               size: this.values2,
               numer: this.shopmathaoo,
-              totle:
-                this.oppppo.shortSleeve["-NJhgO-0Dx_WhuD55FlZ"].shopMoney *
-                this.shopmathaoo,
+              totle: this.oppppo.shortSleeve[0].shopMoney * this.shopmathaoo,
             };
             if (
               this.shopmathaoo === "" ||
